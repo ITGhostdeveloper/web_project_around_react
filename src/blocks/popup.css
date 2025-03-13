@@ -5,7 +5,8 @@
 
 .popup {
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 25%;
   background-color: transparent;
   border: none;
   padding: 40px;
