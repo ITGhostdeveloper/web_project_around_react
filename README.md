@@ -1,9 +1,8 @@
 # Tripleten web_project_around_React
 
-# Descripcion 
+# Descripcion
 
 Este en un proyecto donde ejecutamos tarjetas de lugares turisticos con popups de confirmacion para los usuarios.
-
 
 ## Tecnologias Implementadas.
 
@@ -15,41 +14,42 @@ JavaScript (ES6+)
 React.
 Vite.
 
-## Instalacion 
+## Instalacion
 
 1. Clona el repositorio:
-    git clone https://github.com/ITGhostdeveloper/web_project_around_react.git
+   git clone https://github.com/ITGhostdeveloper/web_project_around_react.git
 
 2. Entra en la carpeta:
-    cd web_project_around_react    
+   cd web_project_around_react
 
 3. Instala dependencias:
-    npm install
+   npm install
 
 4. Inicia el servidor:
-    npm start
+   npm start
 
-## Estructura del Proyecto 
+## Estructura del Proyecto
 
-/node_modules          # Dependencias de Node.js
-/public                # Archivos públicos (probablemente `index.html`)
-/src                   # Código fuente del proyecto
-  ├── /blocks          # Archivos CSS organizados por bloques
-  ├── /components      # Componentes reutilizables de React
-  │     ├── /Footer    # Carpeta para el componente Footer
-  │     │     └── Footer.jsx  # Componente Footer
-  │     │     └── Footer.css  # Estilos del componente Footer
-  │     ├── /Header    # Carpeta para el componente Header
-  │     │     └── Header.jsx  # Componente Header
-  │     │     └── Header.css  # Estilos del componente Header
-  │     ├── /Main      # Carpeta para el componente Main
-  │           └── Main.jsx    # Componente Main
-  │           └── Main.css    # Estilos del componente Main
-  ├── /images          # Carpeta con imágenes y SVGs usados en la app
-  ├── App.jsx          # Componente principal de React
-  ├── main.jsx         # Punto de entrada de la aplicación
-  ├── index.css        # Estilos globales de la aplicación
-  ├── index.html       # Archivo HTML principal
+/node_modules # Dependencias de Node.js
+/public # Archivos públicos (probablemente `index.html`)
+/src # Código fuente del proyecto
+├── /blocks # Archivos CSS organizados por bloques
+├── /components # Componentes reutilizables de React
+│ ├── /Footer # Carpeta para el componente Footer
+│ │ └── Footer.jsx # Componente Footer
+│ │ └── Footer.css # Estilos del componente Footer
+│ ├── /Header # Carpeta para el componente Header
+│ │ └── Header.jsx # Componente Header
+│ │ └── Header.css # Estilos del componente Header
+│ ├── /Main # Carpeta para el componente Main
+│ └── Main.jsx # Componente Main
+│ └── Main.css # Estilos del componente Main
+├── /images # Carpeta con imágenes y SVGs usados en la app
+├── App.jsx # Componente principal de React
+├── main.jsx # Punto de entrada de la aplicación
+├── index.css # Estilos globales de la aplicación
+├── index.html # Archivo HTML principal
 
 ## Autor
+
 Creado por [Andres Hurtado] (https://itghostdeveloper.github.io/web_project_around_react/).

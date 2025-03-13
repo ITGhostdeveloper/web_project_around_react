@@ -29,8 +29,6 @@ const cards = [
   },
 ];
 
-console.log(cards);
-
 function Main() {
   const [popup, setPopup] = useState(null);
   const editProfile = { title: "Editar Perfil", children: <EditProfile /> };
@@ -91,7 +89,11 @@ function Main() {
       <section className="gallery">
         <div className="card-gallery">
           {cards.map((card) => (
-            <Card key={card._id} card={card} onClick={() => handleOpenPopup(cardImage(card.name, card.link))} />
+            <Card
+              key={card._id}
+              card={card}
+              onClick={() => handleOpenPopup(cardImage(card.name, card.link))}
+            />
           ))}
         </div>
       </section>
