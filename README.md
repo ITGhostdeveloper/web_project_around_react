@@ -1,12 +1,55 @@
-# React + Vite
+# Tripleten web_project_around_React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Descripcion 
 
-Currently, two official plugins are available:
+Este en un proyecto donde ejecutamos tarjetas de lugares turisticos con popups de confirmacion para los usuarios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Tecnologias Implementadas.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Para la elaboracion de este proyecto se han implementado las siguientes technologias.
+
+Visual Studio Code version 1.92 (HTML & CSS).
+GitHub.
+JavaScript (ES6+)
+React.
+Vite.
+
+## Instalacion 
+
+1. Clona el repositorio:
+    git clone https://github.com/ITGhostdeveloper/web_project_around_react.git
+
+2. Entra en la carpeta:
+    cd web_project_around_react    
+
+3. Instala dependencias:
+    npm install
+
+4. Inicia el servidor:
+    npm start
+
+## Estructura del Proyecto 
+
+/node_modules          # Dependencias de Node.js
+/public                # Archivos públicos (probablemente `index.html`)
+/src                   # Código fuente del proyecto
+  ├── /blocks          # Archivos CSS organizados por bloques
+  ├── /components      # Componentes reutilizables de React
+  │     ├── /Footer    # Carpeta para el componente Footer
+  │     │     └── Footer.jsx  # Componente Footer
+  │     │     └── Footer.css  # Estilos del componente Footer
+  │     ├── /Header    # Carpeta para el componente Header
+  │     │     └── Header.jsx  # Componente Header
+  │     │     └── Header.css  # Estilos del componente Header
+  │     ├── /Main      # Carpeta para el componente Main
+  │           └── Main.jsx    # Componente Main
+  │           └── Main.css    # Estilos del componente Main
+  ├── /images          # Carpeta con imágenes y SVGs usados en la app
+  ├── App.jsx          # Componente principal de React
+  ├── main.jsx         # Punto de entrada de la aplicación
+  ├── index.css        # Estilos globales de la aplicación
+  ├── index.html       # Archivo HTML principal
+
+## Autor
+Creado por [Andres Hurtado] (https://itghostdeveloper.github.io/web_project_around_react/).
