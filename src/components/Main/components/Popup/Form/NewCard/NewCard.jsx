@@ -1,6 +1,6 @@
 function NewCard() {
   return (
-    <form method="post" className="popup__form">
+    <form method="post" className="popup__form" noValidate>
       <input
         type="text"
         id="card-title"
@@ -11,7 +11,6 @@ function NewCard() {
         maxLength="30"
         required
         name="name"
-        noValidate
       />
       <span className="popup__error" id="card-title-error"></span>
       <input
