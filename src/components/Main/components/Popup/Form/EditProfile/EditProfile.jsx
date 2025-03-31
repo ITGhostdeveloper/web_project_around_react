@@ -2,11 +2,11 @@ import { useState, useContext, useEffect } from "react";
 import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 function EditProfile() {
-  const userContext = useContext(CurrentUserContext); 
+  const userContext = useContext(CurrentUserContext);
   const { currentUser, handleUpdateUser } = userContext;
 
-  const [name, setName] = useState(""); 
-  const [description, setDescription] = useState(""); 
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     setName(currentUser.name);
@@ -14,18 +14,17 @@ function EditProfile() {
   }, [currentUser]);
 
   const handleNameChange = (event) => {
-    setName(event.target.value); 
+    setName(event.target.value);
   };
 
   const handleDescriptionChange = (event) => {
-    setDescription(event.target.value); 
+    setDescription(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    handleUpdateUser({ name, about: description }); 
-    
+    handleUpdateUser({ name, about: description });
   };
 
   return (
