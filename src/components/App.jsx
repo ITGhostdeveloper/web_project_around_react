@@ -6,10 +6,31 @@ import { useState, useEffect } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
+  const [popup, setPopup] = useState(null);
+  const handleClosePopup = () => {
+    setPopup(null);
+  };
+  const handleOpenPopup = (popup) => {
+    setPopup(popup);
+  };
   const [currentUser, setCurrentUser] = useState({
     name: "",
     about: "",
+    avatar: "",
   });
+
+  const handleUpdateUser = (data) => {
+    (async () => {
+      await api
+        .setUserInfo(data)
+        .then((newData) => {
+          setCurrentUser(newData);
+          handleClosePopup();
+        })
+        .catch((error) => console.error(error));
+    })();
+  };
+
   const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
@@ -21,27 +42,16 @@ function App() {
     })();
   }, []);
 
-  const handleUpdateUser = (data) => {
+  const handleUpdateAvatar = (data) => {
     (async () => {
       await api
-        .setUserInfo(data)
+        .updateProfilePicture(data)
         .then((newData) => {
-          setCurrentUser(newData);
-        })
-        .catch((error) => console.error(error));
-    })();
-  };
-
-  const handleUpdateAvatar = (newAvatarUrl) => {
-    (async () => {
-      await api
-        .setUserAvatar({ avatar: newAvatarUrl })
-        .then((newData) => {
-          setAvatar(newData.avatar);
           setCurrentUser((prevUser) => ({
             ...prevUser,
             avatar: newData.avatar,
           }));
+          handleClosePopup();
         })
         .catch((error) =>
           console.error("Error al actualizar el avatar:", error)
@@ -86,10 +96,25 @@ function App() {
       .catch((error) => console.error(error));
   }
 
+  const handleAddPlaceSubmit = async (data) => {
+    try {
+      const newCard = await api.addCard({ name: data.name, link: data.link });
+      setCards((prevCards) => [newCard, ...prevCards]);
+      handleClosePopup();
+    } catch (error) {
+      console.error("Error al agregar la tarjeta:", error);
+    }
+  };
+
   return (
     <>
       <CurrentUserContext.Provider
-        value={{ currentUser, handleUpdateUser, handleUpdateAvatar }}
+        value={{
+          currentUser,
+          handleUpdateUser,
+          handleUpdateAvatar,
+          handleAddPlaceSubmit,
+        }}
       >
         <div className="page">
           <Header avatar={avatar} />
@@ -97,6 +122,11 @@ function App() {
             cards={cards}
             onCardLike={handleCardLike}
             onCardDelete={handleCardDelete}
+            onUpdateAvatar={handleUpdateAvatar}
+            onAddPlaceSubmit={handleAddPlaceSubmit}
+            handleOpenPopup={handleOpenPopup}
+            handleClosePopup={handleClosePopup}
+            popup={popup}
           />
           <Footer />
         </div>

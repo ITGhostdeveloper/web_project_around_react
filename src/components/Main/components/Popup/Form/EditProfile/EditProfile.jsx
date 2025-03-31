@@ -5,11 +5,10 @@ function EditProfile() {
   const userContext = useContext(CurrentUserContext); 
   const { currentUser, handleUpdateUser } = userContext;
 
-  const [name, setName] = useState(currentUser.name); 
-  const [description, setDescription] = useState(currentUser.about); 
+  const [name, setName] = useState(""); 
+  const [description, setDescription] = useState(""); 
 
   useEffect(() => {
-    console.log("Nuevo currentUser:", currentUser);
     setName(currentUser.name);
     setDescription(currentUser.about);
   }, [currentUser]);
@@ -26,7 +25,7 @@ function EditProfile() {
     event.preventDefault(); 
 
     handleUpdateUser({ name, about: description }); 
-    console.log("Formulario enviado:", { name, about: description });
+    
   };
 
   return (

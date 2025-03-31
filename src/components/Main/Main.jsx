@@ -11,8 +11,16 @@ import Card from "./components/Card/Card";
 import CardImage from "./components/Popup/CardImage/CardImage";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Main({ cards, onCardLike, onCardDelete }) {
-  const [popup, setPopup] = useState(null);
+function Main({
+  cards,
+  onCardLike,
+  onCardDelete,
+  onUpdateAvatar,
+  onAddPlaceSubmit,
+  handleClosePopup,
+  handleOpenPopup,
+  popup,
+}) {
   const [avatar, setAvatar] = useState("");
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -27,7 +35,7 @@ function Main({ cards, onCardLike, onCardDelete }) {
   };
   const newCard = {
     title: "Nuevo Lugar",
-    children: <NewCard />,
+    children: <NewCard onAddPlaceSubmit={onAddPlaceSubmit} />,
   };
   const editAvatar = {
     title: "Cambiar Foto de Perfil",
@@ -35,8 +43,7 @@ function Main({ cards, onCardLike, onCardDelete }) {
       <EditAvatar
         onUpdateAvatar={(avatar) => {
           setAvatar(avatar);
-
-          // pedido a la API para actualizar el avatar
+          onUpdateAvatar(avatar);
         }}
       />
     ),
@@ -45,14 +52,6 @@ function Main({ cards, onCardLike, onCardDelete }) {
     title: "",
     children: <CardImage name={name} link={link} />,
   });
-
-  function handleOpenPopup(popup) {
-    setPopup(popup);
-  }
-
-  function handleClosePopup() {
-    setPopup(null);
-  }
 
   return (
     <main className="content">

@@ -10,15 +10,14 @@ function EditAvatar({ onUpdateAvatar }) {
     const newAvatarUrl = avatarRef.current.value;
 
     onUpdateAvatar(newAvatarUrl);
-
-    e.target.reset();
+    
   }
 
   return (
     <form onSubmit={handleSubmit} className="popup__form">
       <input
         type="url"
-        ref={avatarRef} 
+        ref={avatarRef}
         placeholder="URL"
         className="popup__input popup__input_card-url"
         required
