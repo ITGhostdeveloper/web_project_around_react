@@ -1,4 +1,4 @@
-function CardImage(props) {
+function ImagePopup(props) {
   const { name, link } = props;
   return (
     <>
@@ -8,4 +8,4 @@ function CardImage(props) {
   );
 }
 
-export default CardImage;
+export default ImagePopup;

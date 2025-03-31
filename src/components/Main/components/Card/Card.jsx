@@ -1,12 +1,12 @@
-import CardImage from "../Popup/CardImage/CardImage";
+import ImagePopup from "../Popup/ImagePopup/ImagePopup";
 
 function Card(props) {
-  const { card, onClick, onCardLike, onCardDelete, } = props;
+  const { card, onClick, onCardLike, onCardDelete } = props;
   const { name, link, isLiked } = card;
 
   const popupImage = {
     title: "",
-    children: <CardImage name={name} link={link} />,
+    children: <ImagePopup name={name} link={link} />,
   };
   const cardLikeButtonClassName = `button-liked ${
     isLiked ? "liked-button" : ""
@@ -19,9 +19,7 @@ function Card(props) {
   function handleDeleteClick() {
     onCardDelete(card);
   }
-  
 
-  
   return (
     <div className="card" id="card">
       <img

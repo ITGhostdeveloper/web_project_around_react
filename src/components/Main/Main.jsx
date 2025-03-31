@@ -8,8 +8,9 @@ import EditProfile from "./components/Popup/Form/EditProfile/EditProfile";
 import NewCard from "./components/Popup/Form/NewCard/NewCard";
 import EditAvatar from "./components/Popup/Form/EditAvatar/EditAvatar";
 import Card from "./components/Card/Card";
-import CardImage from "./components/Popup/CardImage/CardImage";
+
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import ImagePopup from "./components/Popup/ImagePopup/ImagePopup";
 
 function Main({
   cards,
@@ -50,7 +51,7 @@ function Main({
   };
   const cardImage = (name, link) => ({
     title: "",
-    children: <CardImage name={name} link={link} />,
+    children: <ImagePopup name={name} link={link} />,
   });
 
   return (
